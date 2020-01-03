@@ -89,10 +89,10 @@ start() {
 
 stop() {
     # Remove list to host file
-    sed -i .bak -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
+    sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
 
     # Remove temp file
-    rm "$HOST_FILE.bak"
+    #rm "$HOST_FILE.bak"
 
     # Notify user
     echo "${COLOR_GREEN}DISABLED!${COLOR_RESET}"
