@@ -3,8 +3,13 @@
 # START
 set -e
 
+# VARIABLES
 PROGNAME=$(basename $0)
 CONFIG=($HOME/.maza/)
+HOST_FILE=(/etc/hosts)
+COLOR_RED=`tput setaf 1`
+COLOR_GREEN=`tput setaf 2`
+COLOR_RESET=`tput sgr0`
 LIST="list"
 START_TAG="## MAZA - List ad blocking"
 END_TAG="## END MAZA"
@@ -22,6 +27,7 @@ Usage: $PROGNAME [OPTION]
 Simple and efficient local ad blocking throughout the network.
 
 Options:
+status       Check if it's active or not
 update       Update the list of DNS to be blocked
 start        Activate blocking DNS.
 stop         Stop blocking DNS.
@@ -31,8 +37,14 @@ EOF
     exit 1
 }
 
+status() {
+    if grep -qF "$START_TAG" "$HOST_FILE";then
+        echo "${COLOR_GREEN}ENABLED${COLOR_RESET}"
+    else
+        echo "${COLOR_RED}DISABLED${COLOR_RESET}"
+    fi
+}
 
-## UPDATE
 update() {
     # Make conf folder
     rm -f $CONFIG/$LIST
@@ -53,7 +65,17 @@ update() {
     ## Add end tag DNS list in first line
     echo $END_TAG >> "$CONFIG/$LIST"
     # Notify user
-    echo "Done!"
+    echo "${COLOR_GREEN}Done!${COLOR_RESET}"
+}
+
+start() {
+    cat "$CONFIG/$LIST" "$HOST_FILE" >> "$HOST_FILE"
+    # Notify user
+    echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
+}
+
+stop() {
+    echo "stopdf"
 }
 
 # CONTROLE ARGUMENTS
@@ -64,17 +86,21 @@ while [ $# -gt 0 ] ; do
     --help)
         usage
         ;;
+    status)
+        isArg="1"
+        status
+        ;;
     update)
         isArg="1"
         update
         ;;
     start)
-        echo "Start"
         isArg="1"
+        start
         ;;
     stop)
-        echo "Stop"
         isArg="1"
+        stop
         ;;
     *)
     esac
