@@ -2,6 +2,8 @@
 
 Simple and efficient local ad blocking throughout the network.
 
+<img alt="maza logo" src="media/maza.png" width="500">
+
 ## 🏃‍Run
 
 ### 📡 Update database 
