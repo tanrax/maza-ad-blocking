@@ -4,6 +4,11 @@ Simple and efficient local ad blocking throughout the network.
 
 <img alt="maza logo" src="media/maza.png" width="500">
 
+- You don't have to install any browser extensions or applications, you just use the tools of your operating system.
+- You update the list of DNS to be blocked with a single stroke.
+- Opensource.
+- Just bash.
+
 ## 🏃‍Run
 
 ### 📡 Update database 
