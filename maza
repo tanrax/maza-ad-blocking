@@ -69,7 +69,7 @@ update() {
 }
 
 start() {
-    cat "$CONFIG/$LIST" "$HOST_FILE" >> "$HOST_FILE"
+    cat "$CONFIG/$LIST" >> "$HOST_FILE"
     # Notify user
     echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
 }
