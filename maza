@@ -1,0 +1,68 @@
+#!/bin/sh
+
+# START
+set -e
+
+PROGNAME=$(basename $0)
+CONFIG=($HOME/.maze/)
+LIST="list"
+
+# FUNCTIONS
+
+## HELP
+usage() {
+    if [ "$*" != "" ] ; then
+        echo "Error: $*"
+    fi
+
+    cat << EOF
+Usage: $PROGNAME [OPTION]
+Simple and efficient local ad blocking throughout the network.
+
+Options:
+update       Update the list of DNS to be blocked
+start        Activate blocking DNS.
+stop         Stop blocking DNS.
+--help       Display this usage message and exit
+EOF
+
+    exit 1
+}
+
+
+## UPDATE
+update() {
+    rm -f $CONFIG/$LIST
+    mkdir -p $CONFIG
+    curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts" -o "$CONFIG/$LIST"
+    echo "Done!"
+}
+
+# CONTROLE ARGUMENTS
+isArg=""
+
+while [ $# -gt 0 ] ; do
+    case "$1" in
+    --help)
+        usage
+        ;;
+    update)
+        isArg="1"
+        update
+        ;;
+    start)
+        echo "Start"
+        isArg="1"
+        ;;
+    stop)
+        echo "Stop"
+        isArg="1"
+        ;;
+    *)
+    esac
+    shift
+done
+
+if [ -z $isArg ] ; then
+    usage "Not enough arguments"
+fi
