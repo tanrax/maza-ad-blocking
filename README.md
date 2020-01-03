@@ -1,36 +1,36 @@
-# Maza ad blocking
+# Maza ad blocking 
 
 Simple and efficient local ad blocking throughout the network.
 
-# Run 🏃‍♂️ 
+# 🏃‍ Run
 
-## Update database
+## 📡 Update database 
 
 ``` bash
 maza update 
 ```
 
-## Start
+## 🔨 Start
 
 ``` bash
 sudo maza start 
 ```
 
-## Stop
+## 🛠 Stop
 
 ``` bash
 sudo maza stop 
 ```
 
-## Status
+## ⚖️ Status
 
 ``` bash
 maza status 
 ```
 
-# Install ⚙️
+# ⚙️ Install 
 
-## Requirements 👀
+## 👀 Requirements 
 
 - bash 4.0 or higher
 - curl
@@ -43,7 +43,7 @@ chmod +x maza
 sudo mv maza /usr/local/bin
 ```
 
-# CAUTION
+# ⚠️ CAUTION
 
 - Only compatible with Linux and OSX operating systems.
 - Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
