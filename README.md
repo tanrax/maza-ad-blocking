@@ -10,19 +10,19 @@ Simple and efficient local ad blocking throughout the network.
 maza update 
 ```
 
-### Start
+## Start
 
 ``` bash
 sudo maza start 
 ```
 
-### Stop
+## Stop
 
 ``` bash
 sudo maza stop 
 ```
 
-### Status
+## Status
 
 ``` bash
 maza status 
