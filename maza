@@ -32,9 +32,13 @@ EOF
 
 ## UPDATE
 update() {
+    # Make conf folder
     rm -f $CONFIG/$LIST
     mkdir -p $CONFIG
+    # Download DNS list
     curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts" -o "$CONFIG/$LIST"
+    # Clear list
+    sed -n "/<pre>/,/<\/pre>/p" list > "$CONFIG/$LIST"
     echo "Done!"
 }
 
