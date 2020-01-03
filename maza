@@ -6,6 +6,8 @@ set -e
 PROGNAME=$(basename $0)
 CONFIG=($HOME/.maza/)
 LIST="list"
+START_TAG="## MAZA - List ad blocking"
+END_TAG="## END MAZA"
 
 # FUNCTIONS
 
@@ -38,7 +40,19 @@ update() {
     # Download DNS list
     curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts" -o "$CONFIG/$LIST"
     # Clear list
-    sed -n "/<pre>/,/<\/pre>/p" list > "$CONFIG/$LIST"
+    ## Get PRE tag
+    sed -i .bak -n "/<pre>/,/<\/pre>/p" "$CONFIG/$LIST"
+    ## Remove first line
+    sed -i .bak '1d' "$CONFIG/$LIST"
+    ## Remove last line
+    sed -i .bak '$ d' "$CONFIG/$LIST"
+    ## Add start tag DNS list in first line
+    sed -i .bak "1i\\
+        $START_TAG
+        " "$CONFIG/$LIST"
+    ## Add end tag DNS list in first line
+    echo $END_TAG >> "$CONFIG/$LIST"
+    # Notify user
     echo "Done!"
 }
 
