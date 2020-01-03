@@ -69,13 +69,17 @@ update() {
 }
 
 start() {
+    # Add List to host file
     cat "$CONFIG/$LIST" >> "$HOST_FILE"
     # Notify user
     echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
 }
 
 stop() {
-    echo "stopdf"
+    # Remove list to host file
+
+    # Notify user
+    echo "${COLOR_GREEN}DISABLED!${COLOR_RESET}"
 }
 
 # CONTROLE ARGUMENTS
