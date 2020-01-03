@@ -12,6 +12,8 @@ COLOR_GREEN=`tput setaf 2`
 COLOR_RESET=`tput sgr0`
 LIST="list"
 START_TAG="## MAZA - List ad blocking"
+PROJECT="### https://github.com/tanrax/maza-ad-blocking"
+AUTHOR="### Created by Andros Fenollosa (https://programadorwebvalencia.com/)"
 END_TAG="## END MAZA"
 
 # FUNCTIONS
@@ -54,14 +56,24 @@ update() {
     # Clear list
     ## Get PRE tag
     sed -i .bak -n "/<pre>/,/<\/pre>/p" "$CONFIG/$LIST"
+    ## Remove comments
+    sed -i .bak '/^#/ d' "$CONFIG/$LIST"
     ## Remove first line
     sed -i .bak '1d' "$CONFIG/$LIST"
     ## Remove last line
     sed -i .bak '$ d' "$CONFIG/$LIST"
     ## Add start tag DNS list in first line
     sed -i .bak "1i\\
+        $AUTHOR
+        " "$CONFIG/$LIST"
+    sed -i .bak "1i\\
+        $PROJECT
+        " "$CONFIG/$LIST"
+    sed -i .bak "1i\\
         $START_TAG
         " "$CONFIG/$LIST"
+    # Remove temp file
+    rm "$CONFIG$LIST.bak"
     ## Add end tag DNS list in first line
     echo $END_TAG >> "$CONFIG/$LIST"
     # Notify user
@@ -77,6 +89,10 @@ start() {
 
 stop() {
     # Remove list to host file
+    sed -i .bak -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
+
+    # Remove temp file
+    rm "$HOST_FILE.bak"
 
     # Notify user
     echo "${COLOR_GREEN}DISABLED!${COLOR_RESET}"
