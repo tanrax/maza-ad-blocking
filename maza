@@ -89,11 +89,13 @@ update() {
     echo $END_TAG >> "$CONFIG/$LIST_DNSMASQ"
     # Remove temp file
     rm "$CONFIG$LIST.bak"
+    rm "$CONFIG$LIST_DNSMASQ.bak"
     # Notify user
-    echo "${COLOR_GREEN}Done!${COLOR_RESET}"
+    echo "${COLOR_GREEN}List updated!${COLOR_RESET}"
 }
 
 start() {
+    update
     # Add List to host file
     cat "$CONFIG/$LIST" >> "$HOST_FILE"
     # Notify user
@@ -104,8 +106,8 @@ stop() {
     # Remove list to host file
     sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
 
-    # Remove temp file
-    #rm "$HOST_FILE.bak"
+    # Remove DNSMASQ
+    rm -f $CONFIG/$LIST_DNSMASQ
 
     # Notify user
     echo "${COLOR_GREEN}DISABLED!${COLOR_RESET}"
