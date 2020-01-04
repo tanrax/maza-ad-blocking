@@ -52,16 +52,10 @@ update() {
     rm -f $CONFIG/$LIST
     mkdir -p $CONFIG
     # Download DNS list
-    curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts" -o "$CONFIG/$LIST"
+    curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext" -o "$CONFIG/$LIST"
     # Clear list
-    ## Get PRE tag
-    sed -i .bak -n "/<pre>/,/<\/pre>/p" "$CONFIG/$LIST"
     ## Remove comments
     sed -i .bak '/^#/ d' "$CONFIG/$LIST"
-    ## Remove first line
-    sed -i .bak '1d' "$CONFIG/$LIST"
-    ## Remove last line
-    sed -i .bak '$ d' "$CONFIG/$LIST"
     ## Add start tag DNS list in first line
     sed -i .bak "1i\\
         $AUTHOR
