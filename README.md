@@ -50,6 +50,54 @@ chmod +x maza
 sudo mv maza /usr/local/bin
 ```
 
+## DNSMASQ
+
+Unfortunately the hosts file does not support sub-domains (wildcards), which is necessary to correctly filter all DNS. You will need to install locally a server for that purpose, Maza supports the Dnsmasq format. Here's an example for OSX.
+
+### 1 Install
+
+```bash
+brew install dnsmasq
+```
+
+### 2 Configure
+
+Edit the file.
+
+```
+/usr/local/etc/dnsmasq.conf
+```
+
+Add the following lines.
+
+```
+address=/.localhost/127.0.0.1
+conf-file=(your user path)/.maza/dnsmasq.conf
+```
+
+Start DNSMASQ.
+
+```bash
+sudo brew services stop dnsmasq
+sudo brew services start dnsmasq
+```
+
+### 3 Tell your OS to use your DNS server
+
+Delete the list of OSX DNS servers and add the 3 addresses. The first one will be your local server, and the other 2 belong to OpenDNS, which you can use any other.
+
+```bash
+127.0.0.1
+208.67.222.222
+208.67.220.220
+```
+
+Refresh your DNS cache
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
+
 ## ⚠️ CAUTION
 
 - Only compatible with Linux and OSX operating systems.
