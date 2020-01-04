@@ -11,6 +11,7 @@ COLOR_RED=`tput setaf 1`
 COLOR_GREEN=`tput setaf 2`
 COLOR_RESET=`tput sgr0`
 LIST="list"
+LIST_DNSMASQ="dnsmasq.conf"
 START_TAG="## MAZA - List ad blocking"
 PROJECT="### https://github.com/tanrax/maza-ad-blocking"
 AUTHOR="### Created by Andros Fenollosa (https://programadorwebvalencia.com/)"
@@ -50,12 +51,18 @@ status() {
 update() {
     # Make conf folder
     rm -f $CONFIG/$LIST
+    rm -f $CONFIG/$LIST_DNSMASQ
     mkdir -p $CONFIG
     # Download DNS list
     curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext" -o "$CONFIG/$LIST"
     # Clear list
     ## Remove comments
     sed -i .bak '/^#/ d' "$CONFIG/$LIST"
+    # Make dnsmasq format
+    ## 127.0.0.1 doubleclick.net to address=/doubleclick.net/127.0.0.1
+    cp "$CONFIG/$LIST" "$CONFIG/$LIST_DNSMASQ"
+    sed -i .bak 's/127.0.0.1 /address=\//g' "$CONFIG/$LIST_DNSMASQ"
+    sed -i .bak 's/$/\/127.0.0.1/g' "$CONFIG/$LIST_DNSMASQ"
     ## Add start tag DNS list in first line
     sed -i .bak "1i\\
         $AUTHOR
@@ -66,10 +73,22 @@ update() {
     sed -i .bak "1i\\
         $START_TAG
         " "$CONFIG/$LIST"
-    # Remove temp file
-    rm "$CONFIG$LIST.bak"
     ## Add end tag DNS list in first line
     echo $END_TAG >> "$CONFIG/$LIST"
+    ## Add start tag DNS dnsmasq in first line
+    sed -i .bak "1i\\
+        $AUTHOR
+        " "$CONFIG/$LIST_DNSMASQ"
+    sed -i .bak "1i\\
+        $PROJECT
+        " "$CONFIG/$LIST_DNSMASQ"
+    sed -i .bak "1i\\
+        $START_TAG
+        " "$CONFIG/$LIST_DNSMASQ"
+    ## Add end tag DNS DNSMASQ in first line
+    echo $END_TAG >> "$CONFIG/$LIST_DNSMASQ"
+    # Remove temp file
+    rm "$CONFIG$LIST.bak"
     # Notify user
     echo "${COLOR_GREEN}Done!${COLOR_RESET}"
 }
