@@ -64,27 +64,15 @@ update() {
     sed -i.bak 's/127.0.0.1 /address=\//g' "$CONFIG/$LIST_DNSMASQ"
     sed -i.bak 's/$/\/127.0.0.1/g' "$CONFIG/$LIST_DNSMASQ"
     ## Add start tag DNS list in first line
-    sed -i.bak "1i\\
-        $AUTHOR
-        " "$CONFIG/$LIST"
-    sed -i.bak "1i\\
-        $PROJECT
-        " "$CONFIG/$LIST"
-    sed -i.bak "1i\\
-        $START_TAG
-        " "$CONFIG/$LIST"
+    sed -i.bak "1i\\$AUTHOR" "$CONFIG/$LIST"
+    sed -i.bak "1i\\$PROJECT" "$CONFIG/$LIST"
+    sed -i.bak "1i\\$START_TAG" "$CONFIG/$LIST"
     ## Add end tag DNS list in first line
     echo $END_TAG >> "$CONFIG/$LIST"
     ## Add start tag DNS dnsmasq in first line
-    sed -i.bak "1i\\
-        $AUTHOR
-        " "$CONFIG/$LIST_DNSMASQ"
-    sed -i.bak "1i\\
-        $PROJECT
-        " "$CONFIG/$LIST_DNSMASQ"
-    sed -i.bak "1i\\
-        $START_TAG
-        " "$CONFIG/$LIST_DNSMASQ"
+    sed -i.bak "1i\\$AUTHOR" "$CONFIG/$LIST_DNSMASQ"
+    sed -i.bak "1i\\$PROJECT" "$CONFIG/$LIST_DNSMASQ"
+    sed -i.bak "1i\\$START_TAG" "$CONFIG/$LIST_DNSMASQ"
     ## Add end tag DNS DNSMASQ in first line
     echo $END_TAG >> "$CONFIG/$LIST_DNSMASQ"
     # Remove temp file
