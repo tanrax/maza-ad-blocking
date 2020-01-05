@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # START
 set -e
