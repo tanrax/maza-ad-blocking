@@ -99,7 +99,7 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
 ### Extra: dnsmasq is in charge of solving all DNS
 
-Add in confiigure file: `usr/local/etc/dnsmasq.conf`
+Add in confiigure file: `/usr/local/etc/dnsmasq.conf`
 
 ```
 no-resolv
@@ -109,7 +109,7 @@ server=208.67.220.220
 
 ### Extra: dnsmasq have test domains
 
-If you want all your `.localhost` domains, for example, point to localhost add in confiigure file: `usr/local/etc/dnsmasq.conf`
+If you want all your `.localhost` domains, for example, point to localhost add in confiigure file: `/usr/local/etc/dnsmasq.conf`
 
 ```
 address=/.localhost/127.0.0.1
