@@ -95,7 +95,7 @@ stop() {
     sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
 
     # Remove DNSMASQ
-    rm -f $CONFIG/$LIST_DNSMASQ
+    cat /dev/null > $CONFIG/$LIST_DNSMASQ
 
     # Notify user
     echo "${COLOR_GREEN}DISABLED!${COLOR_RESET}"
