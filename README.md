@@ -45,9 +45,7 @@ maza status
 Then you do this.
 
 ``` bash
-curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza
-chmod +x maza
-sudo mv maza /usr/local/bin
+curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && chmod +x maza && sudo mv maza /usr/local/bin
 ```
 
 ## DNSMASQ
