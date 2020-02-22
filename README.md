@@ -26,7 +26,7 @@ sudo maza start
 ### 🛠 Stop
 
 ``` bash
-maza stop 
+sudo maza stop 
 ```
 
 ### ⚖️ Status
