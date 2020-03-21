@@ -41,11 +41,18 @@ maza status
 
 - bash 4.0 or higher
 - curl
+- gsed (Only OSX users: `brew install gsed`)
 
 Then you do this.
 
 ``` bash
 curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && chmod +x maza && sudo mv maza /usr/local/bin
+```
+
+## Uninstall
+
+``` bash
+sudo rm /usr/local/bin/maza && sudo rm ~/.maza/
 ```
 
 ## DNSMASQ
