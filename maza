@@ -113,7 +113,7 @@ start() {
 
 stop() {
     # Remove list to host file
-    sudo custom-sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
+    custom-sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
 
     # Remove DNSMASQ
     cat /dev/null > $CONFIG$LIST_DNSMASQ
