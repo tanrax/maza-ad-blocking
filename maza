@@ -21,7 +21,7 @@ END_TAG="## END MAZA"
 
 
 # Create sed cross system
-sed() {
+custom-sed() {
     if [[ $THIS_OS = *$NAME_OSX* ]]; then
         # Check if OSX and install GSED
         if [ -x "$(command -v gsed)" ]; then
@@ -35,7 +35,7 @@ sed() {
         sed "$@"
     fi
 }
-export -f sed
+export -f custom-sed
 
 
 # FUNCTIONS
@@ -78,22 +78,22 @@ update() {
     curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext" -o "$CONFIG$LIST"
     # Clear list
     ## Remove comments
-    sed -i.bak '/^#/ d' "$CONFIG$LIST"
+    custom-sed -i.bak '/^#/ d' "$CONFIG$LIST"
     # Make dnsmasq format
     ## 127.0.0.1 doubleclick.net to address=/doubleclick.net/127.0.0.1
     cp "$CONFIG$LIST" "$CONFIG$LIST_DNSMASQ"
-    sed -i.bak 's/127.0.0.1 /address=\//g' "$CONFIG$LIST_DNSMASQ"
-    sed -i.bak 's/$/\/127.0.0.1/g' "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak 's/127.0.0.1 /address=\//g' "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak 's/$/\/127.0.0.1/g' "$CONFIG$LIST_DNSMASQ"
     ## Add start tag DNS list in first line
-    sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST"
-    sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST"
-    sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST"
+    custom-sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST"
+    custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST"
+    custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST"
     ## Add end tag DNS list in first line
     echo $END_TAG >> "$CONFIG/$LIST"
     ## Add start tag DNS dnsmasq in first line
-    sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST_DNSMASQ"
-    sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST_DNSMASQ"
-    sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST_DNSMASQ"
     ## Add end tag DNS DNSMASQ in first line
     echo $END_TAG >> "$CONFIG$LIST_DNSMASQ"
     # Remove temp file
@@ -113,7 +113,7 @@ start() {
 
 stop() {
     # Remove list to host file
-    sudo sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
+    sudo custom-sed -i -n "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
 
     # Remove DNSMASQ
     cat /dev/null > $CONFIG$LIST_DNSMASQ
