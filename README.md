@@ -52,7 +52,7 @@ curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/ma
 ## 🔪 Uninstall
 
 ``` bash
-sudo rm /usr/local/bin/maza && sudo rm ~/.maza
+sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 ```
 
 ## DNSMASQ
