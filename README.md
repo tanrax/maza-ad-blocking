@@ -1,4 +1,4 @@
-# Maza ad blocking 
+# Maza ad blocking - Like Pi-hole but local and using your operating system
 
 Simple, native and efficient local advertising blocker. Compatible with OSX and Linux.
 
