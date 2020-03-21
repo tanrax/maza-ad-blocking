@@ -1,6 +1,6 @@
 # Maza ad blocking 
 
-Simple and efficient local ad blocking throughout the network.
+Simple, native and efficient local advertising blocker. Compatible with OSX and Linux.
 
 <img alt="maza logo" src="media/maza.png" width="500">
 
