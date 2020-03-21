@@ -49,10 +49,10 @@ Then you do this.
 curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && chmod +x maza && sudo mv maza /usr/local/bin
 ```
 
-## Uninstall
+## 🔪 Uninstall
 
 ``` bash
-sudo rm /usr/local/bin/maza && sudo rm ~/.maza/
+sudo rm /usr/local/bin/maza && sudo rm ~/.maza
 ```
 
 ## DNSMASQ
