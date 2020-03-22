@@ -39,9 +39,9 @@ maza status
 
 ### 👀 Requirements 
 
-- bash 4.0 or higher
-- curl
-- gsed (Only OSX users: `brew install gnu-sed`)
+- **bash** 4.0 or higher
+- **curl**
+- Only OSX users, **gsed**: `brew install gnu-sed`
 
 Then you do this.
 
