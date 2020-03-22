@@ -102,7 +102,7 @@ Refresh your DNS cache
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
 
-### Extra: dnsmasq is in charge of solving all DNS
+### Bonus: dnsmasq is in charge of solving all DNS
 
 Add in confiigure file: `/usr/local/etc/dnsmasq.conf`
 
@@ -112,7 +112,7 @@ server=208.67.222.222
 server=208.67.220.220
 ```
 
-### Extra: dnsmasq have test domains
+### Bonus: dnsmasq have test domains
 
 If you want all your `.localhost` domains, for example, point to localhost add in confiigure file: `/usr/local/etc/dnsmasq.conf`
 
