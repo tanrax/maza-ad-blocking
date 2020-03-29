@@ -133,6 +133,6 @@ address=/.localhost/127.0.0.1
 - Only compatible with Linux and OSX operating systems.
 - Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
 
-## 🥇 Top 1 in Hacker News
+## 🥇 Maza was Top 1 in Hacker News
 
 https://news.ycombinator.com/item?id=22717650
