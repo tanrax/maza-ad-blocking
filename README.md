@@ -51,6 +51,12 @@ Then you do this.
 curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && chmod +x maza && sudo mv maza /usr/local/bin
 ```
 
+Optional but recommended, make a backup of your hosts file.
+
+``` bash
+sudo cp /etc/hosts /etc/hosts.backup
+```
+
 ## 🔪 Uninstall
 
 ``` bash
