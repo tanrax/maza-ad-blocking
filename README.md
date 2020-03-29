@@ -1,5 +1,7 @@
 # Maza ad blocking - Like Pi-hole but local and using your operating system
 
+<img alt="demo" src="media/demo.gif">
+
 Simple, native and efficient local advertising blocker. Compatible with OSX and Linux.
 
 <img alt="maza logo" src="media/maza.png" width="500">
