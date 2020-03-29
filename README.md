@@ -39,6 +39,12 @@ maza status
 
 ## ⚙️ Install 
 
+Before getting started, back up your original hosts file: 
+
+```
+cp /private/etc/hosts ~/Documents/hosts-backup
+```
+
 ### 👀 Requirements 
 
 - **bash** 4.0 or higher
