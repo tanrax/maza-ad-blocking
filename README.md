@@ -8,12 +8,25 @@ Comments: https://news.ycombinator.com/item?id=22717650
 
 Simple, native and efficient local advertising blocker. Compatible with OSX and Linux.
 
-<img alt="maza logo" src="media/maza.png" width="500">
+<table>
+  <tr>
+    <td>
+      <img alt="maza logo" src="media/maza.png" width="500">
+    </td>
+    <td>
+      <ul>
+        <li>You <strong>don't have to install any browser extensions or applications</strong>, you just use the tools of your operating system.</li>
+        <li>You update the list of DNS to be blocked with a <strong>single command</strong>.</li>
+        <li><strong>Opensource</strong>.</li>
+        <li>Just <strong>bash</strong>.</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
-- You don't have to install any browser extensions or applications, you just use the tools of your operating system.
-- You update the list of DNS to be blocked with a single stroke.
-- Opensource.
-- Just bash.
+
+
+
 
 ## 🏃‍Run
 
