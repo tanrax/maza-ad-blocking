@@ -121,6 +121,8 @@ Delete the list of OSX DNS servers and add the 3 addresses. The first one will b
 208.67.220.220
 ```
 
+<img alt="network osx" src="media/network-osx.jpg" width="500">
+
 Refresh your DNS cache
 
 ```bash
