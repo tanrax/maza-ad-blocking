@@ -6,7 +6,7 @@ Comments: https://news.ycombinator.com/item?id=22717650
 
 <img alt="demo" src="media/demo.gif">
 
-Simple, native and efficient local advertising blocker. Compatible with OSX and Linux.
+Simple, native and efficient local advertising blocker. Compatible with macOS and Linux.
 
 <table>
   <tr>
@@ -60,7 +60,7 @@ maza status
 
 - **bash** 4.0 or higher
 - **curl**
-- Only OSX users, **gsed**: `brew install gnu-sed`
+- Only macOS users, **gsed**: `brew install gnu-sed`
 
 Then you do this.
 
@@ -82,7 +82,7 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 
 ## DNSMASQ
 
-Unfortunately the hosts file does not support sub-domains (wildcards), which is necessary to correctly filter all DNS. You will need to install locally a server for that purpose, Maza supports the Dnsmasq format. Here's an example for OSX.
+Unfortunately the hosts file does not support sub-domains (wildcards), which is necessary to correctly filter all DNS. You will need to install locally a server for that purpose, Maza supports the Dnsmasq format. Here's an example for macOS.
 
 ### 1 Install
 
@@ -113,7 +113,7 @@ sudo brew services start dnsmasq
 
 ### 3 Tell your OS to use your DNS server
 
-Delete the list of OSX DNS servers and add the 3 addresses. The first one will be your local server, and the other 2 belong to OpenDNS, which you can use any other.
+Delete the list of macOS DNS servers and add the 3 addresses. The first one will be your local server, and the other 2 belong to OpenDNS, which you can use any other.
 
 ```bash
 127.0.0.1
@@ -121,7 +121,7 @@ Delete the list of OSX DNS servers and add the 3 addresses. The first one will b
 208.67.220.220
 ```
 
-<img alt="network osx" src="media/network-osx.jpg" width="500">
+<img alt="network macos" src="media/network-osx.jpg" width="500">
 
 Refresh your DNS cache
 
@@ -149,5 +149,5 @@ address=/.localhost/127.0.0.1
 
 ## ⚠️ CAUTION
 
-- Only compatible with Linux and OSX operating systems.
+- Only compatible with Linux and macOS operating systems.
 - Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
