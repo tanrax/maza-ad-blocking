@@ -82,7 +82,7 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 
 ## DNSMASQ
 
-Unfortunately the hosts file does not support sub-domains (wildcards), which is necessary to correctly filter all DNS. You will need to install locally a server for that purpose, Maza supports the Dnsmasq format. Here's an example for macOS.
+Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format. Here's an example for macOS.
 
 ### 1 Install
 
