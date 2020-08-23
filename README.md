@@ -82,15 +82,17 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 
 ## DNSMASQ
 
-Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format. Here's an example for macOS.
+Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format.
 
-### 1 Install
+### MacOS
+
+#### 1 Install
 
 ```bash
 brew install dnsmasq
 ```
 
-### 2 Configure
+#### 2 Configure
 
 Edit the file.
 
@@ -98,10 +100,16 @@ Edit the file.
 /usr/local/etc/dnsmasq.conf
 ```
 
-Add the following lines.
+Add the following line at the end.
 
 ```
 conf-file=(your user path)/.maza/dnsmasq.conf
+```
+
+Example
+
+```
+conf-file=/Users/myuser/.maza/dnsmasq.conf
 ```
 
 Start DNSMASQ.
@@ -111,7 +119,7 @@ sudo brew services stop dnsmasq
 sudo brew services start dnsmasq
 ```
 
-### 3 Tell your OS to use your DNS server
+#### 3 Tell your OS to use your DNS server
 
 Delete the list of macOS DNS servers and add the 3 addresses. The first one will be your local server, and the other 2 belong to OpenDNS, which you can use any other.
 
@@ -129,6 +137,71 @@ Refresh your DNS cache
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
 
+#### 4 Restart/Start Maza
+
+```bash
+sudo maza stop
+sudo maza start
+```
+
+### Debian/Ubuntu with Gnome Shell
+
+#### 1 Install
+
+```bash
+sudo apt update
+sudo apt install dnsmasq
+```
+
+#### 2 Configure
+
+Edit file in path.
+
+```
+/etc/dnsmasq.conf
+```
+
+Add the following line at the end.
+
+```
+conf-file=(your user path)/.maza/dnsmasq.conf
+```
+
+Example
+
+```
+conf-file=/home/myuser/.maza/dnsmasq.conf
+```
+
+Start DNSMASQ.
+
+```bash
+sudo systemctl stop dnsmasq
+sudo systemctl start dnsmasq
+sudo systemctl enable dnsmasq
+```
+
+#### 3 Tell your OS to use your DNS server
+
+In Gnome Shell, open `Settings->Nework`. Click in the sprocket of your connection.
+
+<img alt="network macos" src="media/network-gnome.png" width="500">
+
+Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you can use any other.
+
+```bash
+127.0.0.1,208.67.222.222,208.67.220.220
+```
+
+<img alt="network macos" src="media/dns-gnome.png" width="500">
+
+#### 4 Restart/Start Maza
+
+```bash
+sudo maza stop
+sudo maza start
+```
+
 ### Bonus: dnsmasq is in charge of solving all DNS
 
 Add in configure file: `/usr/local/etc/dnsmasq.conf`
@@ -139,9 +212,9 @@ server=208.67.222.222
 server=208.67.220.220
 ```
 
-### Bonus: dnsmasq have test domains
+### Bonus: dnsmasq have `localhost` domains
 
-If you want all your `.localhost` domains, for example, point to localhost add in configure file: `/usr/local/etc/dnsmasq.conf`
+If you want all your `.localhost` domains, for example, point to localhost add in configure file: `/usr/local/etc/dnsmasq.conf` or `/etc/dnsmasq.conf`.
 
 ```
 address=/.localhost/127.0.0.1
