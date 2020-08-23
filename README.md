@@ -74,6 +74,20 @@ Optional but recommended, make a backup of your hosts file.
 sudo cp /etc/hosts /etc/hosts.backup
 ```
 
+## 🤖 Auto update of domains to be blocked
+
+Open your `cron`.
+
+``` bash
+crontab -e
+```
+
+Add the following line at the end.
+
+```
+@daily myuser maza update
+```
+
 ## 🔪 Uninstall
 
 ``` bash
