@@ -4,7 +4,7 @@ Comments: https://news.ycombinator.com/item?id=22717650
 
 # 🔨 Maza ad blocking 🔨 - Like Pi-hole but local and using your operating system
 
-Simple, native and efficient **local ad blocker**. Compatible with **MacOS**, **Linux** and **BSD**.
+Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
 
 <img alt="demo" src="media/demo.gif">
 
