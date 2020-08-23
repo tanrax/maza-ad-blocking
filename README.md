@@ -4,29 +4,14 @@ Comments: https://news.ycombinator.com/item?id=22717650
 
 # Maza ad blocking - Like Pi-hole but local and using your operating system
 
-<img alt="demo" src="media/demo.gif">
-
 Simple, native and efficient local advertising blocker. Compatible with macOS and Linux.
 
-<table>
-  <tr>
-    <td>
-      <img alt="maza logo" src="media/maza.png" width="500">
-    </td>
-    <td>
-      <ul>
-        <li>You <strong>don't have to install any browser extensions or applications</strong>, you just use the tools of your operating system.</li>
-        <li>You update the list of DNS to be blocked with a <strong>single command</strong>.</li>
-        <li><strong>Opensource</strong>.</li>
-        <li>Just <strong>bash</strong>.</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<img alt="demo" src="media/demo.gif">
 
-
-
-
+- You **don't have to install any browser extensions or applications**, you just use the tools of your operating system.
+- You update the list of DNS to be blocked with a **single command**.
+- **Opensource**.
+- Just **bash**.
 
 ## 🏃‍Run
 
@@ -85,7 +70,7 @@ crontab -e
 Add the following line at the end.
 
 ```
-@daily myuser maza update
+@daily maza update
 ```
 
 ## 🔪 Uninstall
