@@ -6,15 +6,19 @@ Comments: https://news.ycombinator.com/item?id=22717650
 
 ## Like Pi-hole but local and using your operating system
 
+Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
+
 - You **don't have to install any browser extensions or applications**, you just use the tools of your operating system.
 - You update the list of DNS to be blocked with a **single command**.
 - It affects **any browser** or software installed.
 - Pure **Opensource**.
 - Just **bash**.
 
-Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
-
 <img alt="demo" src="media/demo.gif">
+
+## Become a Patron 
+
+[![Patreon](https://raw.githubusercontent.com/wiki/ocornut/imgui/web/patreon_01.png)](https://www.patreon.com/bePatron?u=22800322)
 
 ## 📟 Commands
 
