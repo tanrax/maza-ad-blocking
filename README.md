@@ -16,11 +16,11 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 
 <img alt="demo" src="media/demo.gif">
 
-## Patreon - Help me continue to improve
+## Help me continue to improve
 
 <p align="center">
   <a href="https://www.patreon.com/bePatron?u=22800322" rel="nofollow">
-    <img src="media/patreon.png" alt="Patreon" style="max-width: 15rem;">
+    <img src="media/patreon.png" alt="Patreon" style="max-width:15rem;">
   </a>
 </p>
 
