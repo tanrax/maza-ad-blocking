@@ -2,17 +2,19 @@
 
 Comments: https://news.ycombinator.com/item?id=22717650
 
-# 🔨 Maza ad blocking 🔨 - Like Pi-hole but local and using your operating system
+<img alt="demo" src="media/banner.png" width="100%">
 
-Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
-
-<img alt="demo" src="media/demo.gif">
+## Like Pi-hole but local and using your operating system
 
 - You **don't have to install any browser extensions or applications**, you just use the tools of your operating system.
 - You update the list of DNS to be blocked with a **single command**.
 - It affects **any browser** or software installed.
 - Pure **Opensource**.
 - Just **bash**.
+
+Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
+
+<img alt="demo" src="media/demo.gif">
 
 ## 📟 Commands
 
