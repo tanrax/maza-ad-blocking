@@ -19,9 +19,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 ## Help me continue to improve
 
 <p align="center">
-  <a href="https://www.patreon.com/bePatron?u=22800322" rel="nofollow">
-    <img src="media/patreon.png" alt="Patreon" style="max-width:15rem;">
-  </a>
+  <a href='https://ko-fi.com/androsfenollosa' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </p>
 
 ## 📟 Commands
