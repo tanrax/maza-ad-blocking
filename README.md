@@ -14,7 +14,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - Pure **Opensource**.
 - Just **bash**.
 
-<img alt="demo" src="media/demo.gif">
+<img alt="demo" src="media/demov2.jpg">
 
 ## Help me continue to improve
 
