@@ -2,9 +2,11 @@
 
 Comments: https://news.ycombinator.com/item?id=22717650
 
-<img alt="demo" src="media/banner.png" width="100%">
+<img alt="banner" src="media/banner.png" width="100%">
 
-## Like Pi-hole but local and using your operating system
+## A command to squash all ads in all browsers
+
+Like Pi-hole but local and using your operating system
 
 Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
 
