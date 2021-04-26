@@ -7,7 +7,7 @@ Comments: https://news.ycombinator.com/item?id=22717650
 ## A command to squash all ads in all browsers
 
 ```shell
-maza start
+sudo maza start
 ```
 
 Like Pi-hole but local and using your operating system.
