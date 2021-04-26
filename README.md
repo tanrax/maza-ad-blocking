@@ -223,13 +223,15 @@ Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you ca
 
 ##### 3.2 KDE Plasma
 
-In KDE Plasma, open `Settings->Nework->Connectios`. Click in your connection. Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you can use any other.
+In KDE Plasma, open `Settings->Nework->Connectios`. Click in your connection and tab `ip4`.
 
-```bash
-127.0.0.1,208.67.222.222,208.67.220.220
-```
+- `Method`: Automatic (Only addresses).
 
-<img alt="kde dns" src="media/dns-kde.png" width="500">
+Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you can use any other.
+
+- `DNS Servers`: `127.0.0.1,208.67.222.222,208.67.220.220`.
+
+<img alt="kde dns" src="media/dns-kde.png" width="100%">
 
 #### 4 Restart/Start Maza
 
