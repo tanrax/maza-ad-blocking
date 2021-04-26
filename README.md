@@ -92,7 +92,16 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 
 Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format.
 
+[MacOS](#MacOS)
+[Linux](#Linux)
+
 ### MacOS
+
+#### 0 Update Maza
+
+```bash
+maza update
+```
 
 #### 1 Install
 
@@ -152,7 +161,13 @@ sudo maza stop
 sudo maza start
 ```
 
-### Debian/Ubuntu with Gnome Shell
+### Linux (Debian/Ubuntu)
+
+#### 0 Update Maza
+
+```bash
+maza update
+```
 
 #### 1 Install
 
@@ -191,9 +206,11 @@ sudo systemctl enable dnsmasq
 
 #### 3 Tell your OS to use your DNS server
 
-In Gnome Shell, open `Settings->Nework`. Click in the sprocket of your connection.
+##### 3.1 Gnome Shell
 
-<img alt="network macos" src="media/network-gnome.png" width="500">
+In Gnome Shell, open `Settings->Nework`. Click in your connection.
+
+<img alt="network gnome" src="media/network-gnome.png" width="500">
 
 Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you can use any other.
 
@@ -201,7 +218,17 @@ Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you ca
 127.0.0.1,208.67.222.222,208.67.220.220
 ```
 
-<img alt="network macos" src="media/dns-gnome.png" width="500">
+<img alt="gnome dns" src="media/dns-gnome.png" width="500">
+
+##### 3.2 KDE Plasma
+
+In KDE Plasma, open `Settings->Nework->Connectios`. Click in your connection. Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you can use any other.
+
+```bash
+127.0.0.1,208.67.222.222,208.67.220.220
+```
+
+<img alt="kde dns" src="media/dns-kde.png" width="500">
 
 #### 4 Restart/Start Maza
 
