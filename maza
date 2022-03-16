@@ -4,6 +4,7 @@
 set -e
 
 # VARIABLES
+URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename $0)
@@ -75,7 +76,7 @@ update() {
     rm -f $CONFIG$LIST_DNSMASQ
     mkdir -p $CONFIG
     # Download DNS list
-    curl -L -s "https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext" -o "$CONFIG$LIST"
+    curl -L -s "$URL_DNS_LIST" -o "$CONFIG$LIST"
     # Clear list
     ## Remove comments
     custom-sed -i.bak '/^#/ d' "$CONFIG$LIST"
