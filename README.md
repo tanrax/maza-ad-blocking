@@ -94,6 +94,22 @@ Add the following line at the end.
 sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 ```
 
+## 🔒 Alternative DNS list
+
+By default the Yoyo DNS list (Peter Lowe) is used. If you want to use another list, like Steven Black's for example, you must modify the variable in line 7. 
+
+It would go from:
+
+```
+URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
+```
+
+To the following:
+
+```
+URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+```
+
 ## DNSMASQ
 
 Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format.
