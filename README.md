@@ -280,7 +280,7 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 address=/.localhost/127.0.0.1
 ```
 
-## 🍓 CREATE YOUR OWN PI-HOLE
+## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 
 You can easily create your own DNS server on a Raspberry Pi, VPS or wherever you want, to connect your devices in just 10 commands thanks to Maza. Follow the [tutorial](https://programadorwebvalencia.com/create-your-own-pi-hole-with-10-commands/).
 
