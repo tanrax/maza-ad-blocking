@@ -287,10 +287,9 @@ You can easily create your own DNS server on a Raspberry Pi, VPS or wherever you
 
 ## ⚠️ CAUTION
 
-- Only compatible with Linux and macOS operating systems.
-- Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
+Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
 
 ## 🧑‍🎨 Credits
 
-<a target="_blank" class="text-yellow" href="https://programadorwebvalencia.com/">Andros Fenollosa</a>
+<a target="_blank" href="https://andros.dev/">Andros Fenollosa</a>
 
