@@ -12,7 +12,7 @@ sudo maza start
 
 Like Pi-hole but local and using your operating system.
 
-Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux** and **BSD**.
+Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux**, **BSD** and **Windows Subsystem for Linux (WSL)**.
 
 - You **don't have to install any browser extensions or applications**, you just use the tools of your operating system.
 - You update the list of DNS to be blocked with a **single command**.
