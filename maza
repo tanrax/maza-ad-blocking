@@ -17,7 +17,7 @@ LIST="list"
 LIST_DNSMASQ="dnsmasq.conf"
 START_TAG="## MAZA - List ad blocking"
 PROJECT="### https://github.com/tanrax/maza-ad-blocking"
-AUTHOR="### Created by Andros Fenollosa (https://programadorwebvalencia.com/)"
+AUTHOR="### Created by Andros Fenollosa (https://andros.dev/)"
 END_TAG="## END MAZA"
 
 
