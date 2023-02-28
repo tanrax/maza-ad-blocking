@@ -14,11 +14,11 @@ Like Pi-hole but local and using your operating system.
 
 Simple, native and efficient **local ad blocker**. Bash script compatible with **MacOS**, **Linux**, **BSD** and **Windows Subsystem for Linux (WSL)**.
 
-- You **don't have to install any browser extensions or applications**, you just use the tools of your operating system.
-- You update the list of DNS to be blocked with a **single command**.
-- It affects **any browser** or software installed.
-- Pure **Opensource**.
-- Just **bash**.
+- Just **bash** 🤖.
+- It affects **any browser** or software installed 😱.
+- You **don't have to install any browser extensions or applications** 🚫, you just use the tools of your operating system.
+- You update the list of DNS to be blocked with a **single command** 😎.
+- Pure **Opensource** ❤️.
 
 <img alt="demo" src="media/demov2.jpg">
 
