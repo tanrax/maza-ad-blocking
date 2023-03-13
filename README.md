@@ -30,33 +30,33 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 
 ## 📟 Commands
 
-### 📡 Update database 
+### 📡 Update database
 
 ``` bash
-maza update 
+maza update
 ```
 
 ### 🔨 Start
 
 ``` bash
-sudo maza start 
+sudo maza start
 ```
 
 ### 🛠 Stop
 
 ``` bash
-sudo maza stop 
+sudo maza stop
 ```
 
 ### ⚖️ Status
 
 ``` bash
-maza status 
+maza status
 ```
 
-## ⚙️ Install 
+## ⚙️ Install
 
-### 😥 Requirements 
+### 😥 Requirements
 
 - **bash** 4.0 or higher
 - **curl**
@@ -94,9 +94,32 @@ Add the following line at the end.
 sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
 ```
 
+## 🚫 Not blocking certain domains
+
+Create a file named `ignore` inside the Maza configuration folder.
+
+``` bash
+touch ~/.maza/ignore
+```
+
+Edit the file for all domains that you do not want to ignore with a line break.
+
+Example:
+
+``` txt
+ads-twitter.com
+ads.twitter.com
+```
+
+Finally update Maza to apply the changes.
+
+``` bash
+maza update
+```
+
 ## 🔒 Alternative DNS list
 
-By default the Yoyo DNS list (Peter Lowe) is used. If you want to use another list, like Steven Black's for example, you must modify the variable in line 7. 
+By default the Yoyo DNS list (Peter Lowe) is used. If you want to use another list, like Steven Black's for example, you must modify the variable in line 7.
 
 It would go from:
 
@@ -292,4 +315,3 @@ Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstanc
 ## 🧑‍🎨 Credits
 
 <a target="_blank" href="https://andros.dev/">Andros Fenollosa</a>
-

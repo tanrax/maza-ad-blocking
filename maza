@@ -15,6 +15,7 @@ COLOR_GREEN=$(tput setaf 2)
 COLOR_RESET=$(tput sgr0)
 LIST="list"
 LIST_DNSMASQ="dnsmasq.conf"
+IGNORE_LIST_FILE="ignore"
 START_TAG="## MAZA - List ad blocking"
 PROJECT="### https://github.com/tanrax/maza-ad-blocking"
 AUTHOR="### Created by Andros Fenollosa (https://andros.dev/)"
@@ -97,6 +98,13 @@ update() {
     custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST_DNSMASQ"
     ## Add end tag DNS DNSMASQ in first line
     echo "$END_TAG" >> "$CONFIG$LIST_DNSMASQ"
+    # Remove the domains to ignore. They are located in ".maza/ignore"
+    if [ -f "$CONFIG/$IGNORE_LIST_FILE" ]; then
+	while IFS= read -r domain; do
+	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST"
+	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST_DNSMASQ"
+	done < "$CONFIG/$IGNORE_LIST_FILE"
+    fi
     # Remove temp file
     rm "$CONFIG$LIST.bak"
     rm "$CONFIG$LIST_DNSMASQ.bak"
