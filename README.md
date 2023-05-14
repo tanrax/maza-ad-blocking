@@ -133,6 +133,13 @@ To the following:
 URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 ```
 
+Over time, changes are made to the origins that affect the proper functioning of Maza. Check the following table before implementation.
+
+|  DNS list | Is it currently compatible? |
+| -- | -- |
+| Yoyo  (Peter Lowe) | ✅ |
+| Steven Black's | ❌ |
+
 ## DNSMASQ
 
 Unfortunately the hosts file does **not support sub-domains (wildcards)**, which is necessary to correctly filter all DNS. You will **need to install locally a server** for that purpose, Maza supports the **Dnsmasq** format.
