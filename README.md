@@ -133,12 +133,7 @@ To the following:
 URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 ```
 
-Over time, changes are made to the origins that affect the proper functioning of Maza. Check the following table before implementation.
-
-|  DNS list | Is it currently compatible? |
-| -- | -- |
-| Yoyo  (Peter Lowe) | ✅ |
-| Steven Black's | ❌ |
+⚠️ Steven Black's main list has been reported to fail. Read the following [issue](https://github.com/tanrax/maza-ad-blocking/issues/20) to understand what is wrong and how to fix it. ⚠️
 
 ## DNSMASQ
 
