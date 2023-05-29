@@ -8,7 +8,7 @@ URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
-[[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.maza/ || CONFIG=$XDG_CONFIG_HOME/maza/
+[[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.config/maza/ || CONFIG=$XDG_CONFIG_HOME/maza/
 HOST_FILE=/etc/hosts
 COLOR_RED=$(tput setaf 1)
 COLOR_GREEN=$(tput setaf 2)
