@@ -91,7 +91,7 @@ Add the following line at the end.
 ## 🔪 Uninstall
 
 ``` bash
-sudo rm /usr/local/bin/maza && sudo rm -r ~/.maza
+sudo rm /usr/local/bin/maza && sudo rm -r ~/.config/maza
 ```
 
 ## 🚫 Not blocking certain domains
@@ -168,13 +168,13 @@ Edit the file.
 Add the following line at the end.
 
 ```
-conf-file=(your user path)/.maza/dnsmasq.conf
+conf-file=(your user path)/.config/maza/dnsmasq.conf
 ```
 
 Example
 
 ```
-conf-file=/Users/myuser/.maza/dnsmasq.conf
+conf-file=/Users/myuser/.config/maza/dnsmasq.conf
 ```
 
 Start DNSMASQ.
@@ -235,13 +235,13 @@ Edit file in path.
 Add the following line at the end.
 
 ```
-conf-file=(your user path)/.maza/dnsmasq.conf
+conf-file=(your user path)/.config/maza/dnsmasq.conf
 ```
 
 Example
 
 ```
-conf-file=/home/myuser/.maza/dnsmasq.conf
+conf-file=/home/myuser/.config/maza/dnsmasq.conf
 ```
 
 Start DNSMASQ.
