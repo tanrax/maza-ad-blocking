@@ -8,7 +8,7 @@ URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
-[[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.maza/ || CONFIG=$XDG_CONFIG_HOME/maza
+[[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.maza/ || CONFIG=$XDG_CONFIG_HOME/maza/
 HOST_FILE=/etc/hosts
 COLOR_RED=$(tput setaf 1)
 COLOR_GREEN=$(tput setaf 2)
@@ -91,7 +91,7 @@ update() {
     custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST"
     custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST"
     ## Add end tag DNS list in first line
-    echo "$END_TAG" >> "$CONFIG/$LIST"
+    echo "$END_TAG" >> "$CONFIG$LIST"
     ## Add start tag DNS dnsmasq in first line
     custom-sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST_DNSMASQ"
     custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST_DNSMASQ"
@@ -99,11 +99,11 @@ update() {
     ## Add end tag DNS DNSMASQ in first line
     echo "$END_TAG" >> "$CONFIG$LIST_DNSMASQ"
     # Remove the domains to ignore. They are located in ".maza/ignore"
-    if [ -f "$CONFIG/$IGNORE_LIST_FILE" ]; then
+    if [ -f "$CONFIG$IGNORE_LIST_FILE" ]; then
 	while IFS= read -r domain; do
 	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST"
 	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST_DNSMASQ"
-	done < "$CONFIG/$IGNORE_LIST_FILE"
+	done < "$CONFIG$IGNORE_LIST_FILE"
     fi
     # Remove temp file
     rm "$CONFIG$LIST.bak"
@@ -115,7 +115,7 @@ update() {
 start() {
     update
     # Add List to host file
-    cat "$CONFIG/$LIST" >> "$HOST_FILE"
+    cat "$CONFIG$LIST" >> "$HOST_FILE"
     # Notify user
     echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
 }
