@@ -4,7 +4,8 @@
 set -e
 
 # VARIABLES
-URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
+#URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
+URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
@@ -91,7 +92,12 @@ update() {
     # Download DNS list
     curl -L -s "$URL_DNS_LIST" -o "$CONFIG$LIST"
     ## Remove comments
+    ### Start with #
     custom-sed -i.bak '/^#/ d' "$CONFIG$LIST"
+    ### Remove comments in middle of line
+    custom-sed -i.bak 's/#.*$//g' "$CONFIG$LIST"
+    ### Remove spaces in end of line
+    custom-sed -i.bak 's/ *$//g' "$CONFIG$LIST"
     ## Remove "0.0.0.0" or "127.0.0.1"
     custom-sed -i.bak 's/0.0.0.0 //g' "$CONFIG$LIST"
     custom-sed -i.bak 's/127.0.0.1 //g' "$CONFIG$LIST"
