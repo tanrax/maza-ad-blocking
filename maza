@@ -15,6 +15,18 @@ COLOR_GREEN=$(tput setaf 2)
 COLOR_RESET=$(tput sgr0)
 LIST="list"
 LIST_DNSMASQ="dnsmasq.conf"
+IGNORE_LIST_DEFAULT="localhost \
+localhost.localdomain \
+local \
+broadcasthost \
+ip6-localhost \
+ip6-loopback \
+ip6-localnet \
+ip6-mcastprefix \
+ip6-allnodes \
+ip6-allrouters \
+ip6-allhosts \
+0.0.0.0"
 IGNORE_LIST_FILE="ignore"
 START_TAG="## MAZA - List ad blocking"
 PROJECT="### https://github.com/tanrax/maza-ad-blocking"
@@ -78,14 +90,26 @@ update() {
     mkdir -p "$CONFIG"
     # Download DNS list
     curl -L -s "$URL_DNS_LIST" -o "$CONFIG$LIST"
-    # Clear list
     ## Remove comments
     custom-sed -i.bak '/^#/ d' "$CONFIG$LIST"
+    ## Remove "0.0.0.0" or "127.0.0.1"
+    custom-sed -i.bak 's/0.0.0.0 //g' "$CONFIG$LIST"
+    custom-sed -i.bak 's/127.0.0.1 //g' "$CONFIG$LIST"
+    # Make ignore list
+    if [ ! -f "$CONFIG$IGNORE_LIST_FILE" ]; then
+	echo "$IGNORE_LIST_DEFAULT" | tr " " "\n" > "$CONFIG$IGNORE_LIST_FILE"
+    fi
+    # Remove ignore list
+    while read -r line; do
+	custom-sed -i.bak "/$line/d" "$CONFIG$LIST"
+    done < "$CONFIG$IGNORE_LIST_FILE"
+    ## Remove empty lines
+    custom-sed -i.bak '/^$/d' "$CONFIG$LIST"
     # Make dnsmasq format
-    ## 127.0.0.1 doubleclick.net to address=/doubleclick.net/127.0.0.1
     cp "$CONFIG$LIST" "$CONFIG$LIST_DNSMASQ"
-    custom-sed -i.bak 's/127.0.0.1 /address=\//g' "$CONFIG$LIST_DNSMASQ"
-    custom-sed -i.bak 's/$/\/127.0.0.1/g' "$CONFIG$LIST_DNSMASQ"
+    ## doubleclick.net to address=/doubleclick.net/127.0.0.1
+    custom-sed -i.bak "s/^/address=\//g" "$CONFIG$LIST_DNSMASQ"
+    custom-sed -i.bak "s/$/\/127.0.0.1/g" "$CONFIG$LIST_DNSMASQ"
     ## Add start tag DNS list in first line
     custom-sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST"
     custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST"
@@ -98,13 +122,6 @@ update() {
     custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST_DNSMASQ"
     ## Add end tag DNS DNSMASQ in first line
     echo "$END_TAG" >> "$CONFIG$LIST_DNSMASQ"
-    # Remove the domains to ignore. They are located in ".maza/ignore"
-    if [ -f "$CONFIG$IGNORE_LIST_FILE" ]; then
-	while IFS= read -r domain; do
-	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST"
-	    custom-sed -i.bak "/$domain/d" "$CONFIG$LIST_DNSMASQ"
-	done < "$CONFIG$IGNORE_LIST_FILE"
-    fi
     # Remove temp file
     rm "$CONFIG$LIST.bak"
     rm "$CONFIG$LIST_DNSMASQ.bak"
