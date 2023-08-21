@@ -113,8 +113,12 @@ update() {
     custom-sed -i.bak '/^$/d' "$CONFIG$LIST"
     # Make dnsmasq format
     cp "$CONFIG$LIST" "$CONFIG$LIST_DNSMASQ"
-    ## doubleclick.net to address="/doubleclick.net/127.0.0.1"
-    custom-sed -i.bak 's/\(.*\)/address="\/\1\/127.0.0.1"/' "$CONFIG$LIST_DNSMASQ"
+    ## Remove triple "-". Example: "my---domain.com" to "my-domain.com". Only in dnsmasq.
+    custom-sed -i.bak "s/---/-/g" "$CONFIG$LIST_DNSMASQ"
+    ## Remove double "-". Example: "my--domain.com" to "my-domain.com". Only in dnsmasq.
+    custom-sed -i.bak "s/--/-/g" "$CONFIG$LIST_DNSMASQ"
+    ## mydomain.com to address=/mydomain.com/127.0.0.1
+    custom-sed -i.bak "s|\(.*\)|address=/\1/127.0.0.1|" "$CONFIG$LIST_DNSMASQ"
     ## Add start tag DNS list in first line
     custom-sed -i.bak "1i\\$AUTHOR" "$CONFIG$LIST"
     custom-sed -i.bak "1i\\$PROJECT" "$CONFIG$LIST"
