@@ -4,8 +4,7 @@
 set -e
 
 # VARIABLES
-#URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
-URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
