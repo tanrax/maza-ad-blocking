@@ -132,13 +132,13 @@ maza update
 
 By default the Yoyo DNS list (Peter Lowe) is used. If you want to use another list, like Steven Black's for example, you must modify the variable in line 7.
 
-It would go from:
+Replace this line:
 
 ```
 URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
 ```
 
-To the following:
+with this:
 
 ```
 URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
