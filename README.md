@@ -22,6 +22,18 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 
 <img alt="demo" src="media/demov2.jpg">
 
+## Index
+
+- [Commands](#-commands)
+- [Install or update](#-auto-update-of-domains-to-be-blocked)
+- [Auto update of domains to be blocked](#-auto-update-of-domains-to-be-blocked)
+- [Uninstall](#-uninstall)
+- [Not blocking certain domains](#-not-blocking-certain-domains)
+- [Add custom domains to block](#-add-custom-domains-to-block)
+- [Alternative DNS list](#-alternative-dns-list)
+- [DNSMASQ (or support sub-domains: wildcards)](#dnsmasq)
+  - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
+
 ## Help me continue to improve
 
 <p align="center">
@@ -125,6 +137,24 @@ ip6-allhosts
 Finally update Maza to apply the changes.
 
 ``` bash
+maza update
+```
+
+## 🎯 Add custom domains to block
+
+If you want to include your own domains to be blocked, you can add them to `~/.config/maza/custom-domains`. They must each be on one line, ignoring end slash or protocol (`http` or `https`).
+
+For example:
+
+``` txt
+beauty-tea.com
+www.expaqua.cloud
+ad.about.com
+```
+
+Then update the database to regenerate the list to include your domains.
+
+```
 maza update
 ```
 
