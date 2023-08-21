@@ -96,19 +96,30 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.config/maza
 
 ## 🚫 Not blocking certain domains
 
-Create a file named `ignore` inside the Maza configuration folder.
-
-``` bash
-touch ~/.maza/ignore
-```
-
-Edit the file for all domains that you do not want to ignore with a line break.
+Edit `~/.maza/ignore` and add the domains you want to ignore.
 
 Example:
 
 ``` txt
 ads-twitter.com
 ads.twitter.com
+```
+
+By default, the following domains are ignored to avoid problems with the operating system.
+
+``` txt
+localhost
+localhost.localdomain
+local
+broadcasthost
+ip6-localhost
+ip6-loopback
+ip6-localnet
+ip6-mcastprefix
+ip6-allnodes
+ip6-allrouters
+ip6-allhosts
+0.0.0.0
 ```
 
 Finally update Maza to apply the changes.
