@@ -131,8 +131,9 @@ update() {
 
 start() {
     update
-    # Add List to host file
-    cat "$CONFIG$LIST" >> "$HOST_FILE"
+    # Add List to host file.
+    # Transform "mydomain.com" to "127.0.0.1 mydomain.com" except comments
+    custom-sed "/^#/!s/^/127.0.0.1 /g" "$CONFIG$LIST" >> "$HOST_FILE"
     # Notify user
     echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
 }
