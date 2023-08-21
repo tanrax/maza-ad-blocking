@@ -16,6 +16,7 @@ COLOR_GREEN=$(tput setaf 2)
 COLOR_RESET=$(tput sgr0)
 LIST="list"
 LIST_DNSMASQ="dnsmasq.conf"
+CUSTOM_DOMAINS="custom-domains"
 IGNORE_LIST_DEFAULT="localhost \
 localhost.localdomain \
 local \
@@ -85,10 +86,12 @@ status() {
 }
 
 update() {
+
     # Make conf folder
     rm -f "$CONFIG$LIST"
     rm -f "$CONFIG$LIST_DNSMASQ"
     mkdir -p "$CONFIG"
+
     # Download DNS list
     curl -L -s "$URL_DNS_LIST" -o "$CONFIG$LIST"
     ## Remove comments
@@ -101,16 +104,30 @@ update() {
     ## Remove "0.0.0.0" or "127.0.0.1"
     custom-sed -i.bak 's/0.0.0.0 //g' "$CONFIG$LIST"
     custom-sed -i.bak 's/127.0.0.1 //g' "$CONFIG$LIST"
+
     # Make ignore list
     if [ ! -f "$CONFIG$IGNORE_LIST_FILE" ]; then
 	echo "$IGNORE_LIST_DEFAULT" | tr " " "\n" > "$CONFIG$IGNORE_LIST_FILE"
     fi
+
     # Remove ignore list
     while read -r line; do
 	custom-sed -i.bak "/$line/d" "$CONFIG$LIST"
     done < "$CONFIG$IGNORE_LIST_FILE"
-    ## Remove empty lines
+
+    # Make custom domains
+    ## Check if file exists
+    if [ ! -f "$CONFIG$CUSTOM_DOMAINS" ]; then
+	## Create file
+	touch "$CONFIG$CUSTOM_DOMAINS"
+    fi
+    ## Include custom domains
+    cat "$CONFIG$CUSTOM_DOMAINS" >> "$CONFIG$LIST"
+    echo "" >> "$CONFIG$LIST"
+
+    # Remove empty lines
     custom-sed -i.bak '/^$/d' "$CONFIG$LIST"
+
     # Make dnsmasq format
     cp "$CONFIG$LIST" "$CONFIG$LIST_DNSMASQ"
     ## Remove triple "-". Example: "my---domain.com" to "my-domain.com". Only in dnsmasq.
@@ -131,9 +148,11 @@ update() {
     custom-sed -i.bak "1i\\$START_TAG" "$CONFIG$LIST_DNSMASQ"
     ## Add end tag DNS DNSMASQ in first line
     echo "$END_TAG" >> "$CONFIG$LIST_DNSMASQ"
+
     # Remove temp file
     rm "$CONFIG$LIST.bak"
     rm "$CONFIG$LIST_DNSMASQ.bak"
+
     # Notify user
     echo "${COLOR_GREEN}List updated!${COLOR_RESET}"
 }
