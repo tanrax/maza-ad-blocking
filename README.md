@@ -54,7 +54,7 @@ sudo maza stop
 maza status
 ```
 
-## ⚙️ Install
+## ⚙️ Install or Update
 
 ### 😥 Requirements
 
@@ -65,7 +65,7 @@ maza status
 Then you do this.
 
 ``` bash
-curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && chmod +x maza && sudo mv maza /usr/local/bin
+curl -o maza https://raw.githubusercontent.com/tanrax/maza-ad-blocking/master/maza && sudo rm -rf /usr/local/bin/maza && chmod +x maza && sudo mv maza /usr/local/bin
 ```
 
 Optional but recommended, make a backup of your hosts file.
