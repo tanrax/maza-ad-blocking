@@ -96,7 +96,7 @@ sudo rm /usr/local/bin/maza && sudo rm -r ~/.config/maza
 
 ## 🚫 Not blocking certain domains
 
-Edit `~/.maza/ignore` and add the domains you want to ignore.
+Edit `~/.config/maza/ignore` and add the domains you want to ignore.
 
 Example:
 
