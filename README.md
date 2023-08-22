@@ -1,4 +1,6 @@
-## 🥇 Maza was Top 1 in Hacker News
+# Maza ad blocking
+
+## 🥇 Top 1 in Hacker News
 
 Comments: https://news.ycombinator.com/item?id=22717650
 
