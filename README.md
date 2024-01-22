@@ -102,7 +102,7 @@ Add the following line at the end.
 @daily maza update
 ```
 
-Some users have reported problems on MacOS. Fixed with `TERM=dumb`.
+Some users have reported problems creating demons on MacOS. Fixed with `TERM=dumb`.
 
 ```
 TERM=dumb
