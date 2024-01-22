@@ -102,6 +102,13 @@ Add the following line at the end.
 @daily maza update
 ```
 
+Some users have reported problems on MacOS. Fixed with `TERM=dumb`.
+
+```
+TERM=dumb
+@daily maza update
+```
+
 ## 🔪 Uninstall
 
 ``` bash
