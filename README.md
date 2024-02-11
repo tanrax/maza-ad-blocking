@@ -102,7 +102,7 @@ Add the following line at the end.
 @daily maza update
 ```
 
-Some users have reported problems creating demons on MacOS. Fixed with `TERM=dumb`.
+Some users have reported problems creating daemons on MacOS. Fixed with `TERM=dumb`.
 
 ```
 TERM=dumb
@@ -304,7 +304,7 @@ sudo systemctl enable dnsmasq
 
 ##### 3.1 Gnome Shell
 
-In Gnome Shell, open `Settings->Nework`. Click in your connection.
+In Gnome Shell, open `Settings->Network`. Click in your connection.
 
 <img alt="network gnome" src="media/network-gnome.png" width="500">
 
@@ -318,7 +318,7 @@ Add your local server (dnsmasq), and the other 2 belong to OpenDNS, which you ca
 
 ##### 3.2 KDE Plasma
 
-In KDE Plasma, open `Settings->Nework->Connectios`. Click in your connection and tab `ip4`.
+In KDE Plasma, open `Settings->Network->Connectios`. Click in your connection and tab `ip4`.
 
 - `Method`: Automatic (Only addresses).
 
