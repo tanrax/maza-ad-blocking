@@ -36,12 +36,6 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - [DNSMASQ (or support sub-domains: wildcards)](#dnsmasq)
   - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
 
-## Help me continue to improve
-
-<p align="center">
-  <a href="https://liberapay.com/androsfenollosa/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-</p>
-
 ## 📟 Commands
 
 ### 📡 Update database
@@ -357,6 +351,11 @@ address=/.localhost/127.0.0.1
 
 [Jabber/XMPP](xmpp://maza-ad-blocking@conference.im.andros.dev/?join)
 
+## Help me continue to improve
+
+<p align="center">
+  <a href="https://liberapay.com/androsfenollosa/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+</p>
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 
