@@ -39,7 +39,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 ## Help me continue to improve
 
 <p align="center">
-  <a href='https://ko-fi.com/androsfenollosa' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+  <a href="https://liberapay.com/androsfenollosa/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 </p>
 
 ## 📟 Commands
@@ -352,6 +352,11 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 ```
 address=/.localhost/127.0.0.1
 ```
+
+## 💬 Get Help or talk to the community
+
+[Jabber/XMPP](xmpp://maza-ad-blocking@conference.im.andros.dev/?join)
+
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 
