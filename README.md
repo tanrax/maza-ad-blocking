@@ -347,7 +347,7 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 address=/.localhost/127.0.0.1
 ```
 
-## 💬 Get Help or talk to the community
+## 💬 Get Help or talk with the community
 
 [Jabber/XMPP](xmpp://maza-ad-blocking@conference.im.andros.dev/?join)
 
