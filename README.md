@@ -163,7 +163,7 @@ maza update
 
 ## 🔒 Alternative DNS list
 
-By default the Yoyo DNS list (Peter Lowe) is used. If you want to use another list, like Steven Black's for example, you must modify the variable in line 7.
+By default the Yoyo DNS list (Peter Lowe) is used (3.7k domains blocked). If you want to use another list, like Steven Black's for example (135k domains blocked, incluyed Yoyo DNS list), you must modify the variable in line 7.
 
 Replace this line:
 
