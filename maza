@@ -5,6 +5,7 @@ set -e
 
 # VARIABLES
 URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
+URL_DNS_LIST_CUSTOM=""
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
@@ -86,13 +87,19 @@ status() {
 
 update() {
 
+    local local_url_dns_list="$URL_DNS_LIST" # Default
+    if [ -n "$URL_DNS_LIST_CUSTOM" ]; then
+	echo "si"
+	local_url_dns_list="$URL_DNS_LIST_CUSTOM" # Custom
+    fi
+
     # Make conf folder
     rm -f "$CONFIG$LIST"
     rm -f "$CONFIG$LIST_DNSMASQ"
     mkdir -p "$CONFIG"
 
     # Download DNS list
-    curl -L -s "$URL_DNS_LIST" -o "$CONFIG$LIST"
+    curl -L -s "$local_url_dns_list" -o "$CONFIG$LIST"
     ## Remove comments
     ### Start with #
     custom-sed -i.bak '/^#/ d' "$CONFIG$LIST"

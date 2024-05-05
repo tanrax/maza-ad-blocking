@@ -163,18 +163,10 @@ maza update
 
 ## 🔒 Alternative DNS list
 
-By default the Yoyo DNS list (Peter Lowe) is used (3.7k domains blocked). If you want to use another list, like Steven Black's for example (135k domains blocked, incluyed Yoyo DNS list), you must modify the variable in line 7.
-
-Replace this line:
+By default the Yoyo (Peter Lowe) DNS list is used (3.7k blocked domains). If you want to use another list, such as Steven Black's for example (with 135k blocked domains), you must add the URL of your list on line 8.
 
 ```
-URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
-```
-
-with this:
-
-```
-URL_DNS_LIST="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+URL_DNS_LIST_CUSTOM="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
 ```
 
 ## DNSMASQ
