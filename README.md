@@ -341,7 +341,7 @@ address=/.localhost/127.0.0.1
 
 ## 💬 Get Help or talk with the community
 
-[Jabber/XMPP](xmpp://maza-ad-blocking@conference.im.andros.dev/?join)
+[Jabber/XMPP](xmpp:maza-ad-blocking@groups.im.andros.dev/?join)
 
 ## Help me continue to improve
 
