@@ -339,15 +339,17 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 address=/.localhost/127.0.0.1
 ```
 
+## ☕ Buy me a coffee
+
+Help me continue to improve.
+
+```shell
+ssh customer@andros.dev -p 5555
+```
+
 ## 💬 Get Help or talk with the community
 
 [Jabber/XMPP](xmpp:maza-ad-blocking@groups.im.andros.dev/?join)
-
-## Help me continue to improve
-
-<p align="center">
-  <a href="https://liberapay.com/androsfenollosa/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
-</p>
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 
