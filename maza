@@ -134,6 +134,19 @@ update() {
     # Remove empty lines
     custom-sed -i.bak '/^$/d' "$CONFIG$LIST"
 
+    # Update HOST_FILE
+    ## Remove old list
+    custom-sed -i "/$START_TAG/,/$END_TAG/d" "$HOST_FILE"
+    ## Add List to host file.
+    # Add start tag DNS list in first line
+    echo "$START_TAG" >> "$HOST_FILE"
+    echo "$PROJECT" >> "$HOST_FILE"
+    echo "$AUTHOR" >> "$HOST_FILE"
+    # Transform "mydomain.com" to "127.0.0.1 mydomain.com" except comments
+    custom-sed "/^#/!s/^/127.0.0.1 /g" "$CONFIG$LIST" >> "$HOST_FILE"
+    # Add end tag DNS list in first line
+    echo "$END_TAG" >> "$HOST_FILE"
+
     # Make dnsmasq format
     cp "$CONFIG$LIST" "$CONFIG$LIST_DNSMASQ"
     ## Remove triple "-". Example: "my---domain.com" to "my-domain.com". Only in dnsmasq.
@@ -165,9 +178,6 @@ update() {
 
 start() {
     update
-    # Add List to host file.
-    # Transform "mydomain.com" to "127.0.0.1 mydomain.com" except comments
-    custom-sed "/^#/!s/^/127.0.0.1 /g" "$CONFIG$LIST" >> "$HOST_FILE"
     # Notify user
     echo "${COLOR_GREEN}ENABLED!${COLOR_RESET}"
 }

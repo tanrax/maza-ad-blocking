@@ -41,7 +41,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 ### 📡 Update database
 
 ``` bash
-maza update
+sudo maza update
 ```
 
 ### 🔨 Start
@@ -59,7 +59,7 @@ sudo maza stop
 ### ⚖️ Status
 
 ``` bash
-maza status
+sudo maza status
 ```
 
 ## ⚙️ Install or Update
@@ -106,12 +106,12 @@ TERM=dumb
 ## 🔪 Uninstall
 
 ``` bash
-sudo rm /usr/local/bin/maza && sudo rm -r ~/.config/maza
+sudo rm /usr/local/bin/maza && sudo rm -r /root/.config/maza
 ```
 
 ## 🚫 Not blocking certain domains
 
-Edit `~/.config/maza/ignore` and add the domains you want to ignore.
+Edit `/root/.config/maza/ignore` and add the domains you want to ignore.
 
 Example:
 
@@ -140,12 +140,12 @@ ip6-allhosts
 Finally update Maza to apply the changes.
 
 ``` bash
-maza update
+sudo maza update
 ```
 
 ## 🎯 Add custom domains to block
 
-If you want to include your own domains to be blocked, you can add them to `~/.config/maza/custom-domains`. They must each be on one line, ignoring end slash or protocol (`http` or `https`).
+If you want to include your own domains to be blocked, you can add them to `/root/.config/maza/custom-domains`. They must each be on one line, ignoring end slash or protocol (`http` or `https`).
 
 For example:
 
@@ -158,7 +158,7 @@ ad.about.com
 Then update the database to regenerate the list to include your domains.
 
 ```
-maza update
+sudo maza update
 ```
 
 ## 🔒 Alternative DNS list
@@ -182,7 +182,7 @@ Unfortunately the hosts file does **not support sub-domains (wildcards)**, which
 #### 0 Update Maza
 
 ```bash
-maza update
+sudo maza update
 ```
 
 #### 1 Install
@@ -248,7 +248,7 @@ sudo maza start
 #### 0 Update Maza
 
 ```bash
-maza update
+sudo maza update
 ```
 
 #### 1 Install
