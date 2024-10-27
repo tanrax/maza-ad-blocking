@@ -349,7 +349,8 @@ ssh customer@andros.dev -p 5555
 
 ## 💬 Get Help or talk with the community
 
-[Jabber/XMPP](xmpp:maza-ad-blocking@groups.im.andros.dev/?join)
+- [IRC: Libera #maza-ad-blocking](ircs://irc.libera.chat:6697/maza-ad-blocking)
+- [Jabber/XMPP](xmpp:maza-ad-blocking@groups.im.andros.dev/?join)
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 
