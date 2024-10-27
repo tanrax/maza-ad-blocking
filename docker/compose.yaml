@@ -1,0 +1,13 @@
+services:
+  maza_dns:
+    build: .
+    container_name: maza_dns
+    environment:
+      #- URL_DNS_LIST_CUSTOM="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "67:67/udp"
+    volumes:
+      - maza_data:/etc/maza
+    restart: unless-stopped
