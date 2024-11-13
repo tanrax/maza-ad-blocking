@@ -28,6 +28,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 
 - [Commands](#-commands)
 - [Install or update](#%EF%B8%8F-install-or-update)
+- [Check if you block ads](#-check-if-you-block-ads)
 - [Auto update of domains to be blocked](#-auto-update-of-domains-to-be-blocked)
 - [Uninstall](#-uninstall)
 - [Not blocking certain domains](#-not-blocking-certain-domains)
