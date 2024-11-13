@@ -82,6 +82,25 @@ Optional but recommended, make a backup of your hosts file.
 sudo cp /etc/hosts /etc/hosts.backup
 ```
 
+## 🧪 Check if you block ads
+
+You can run a test to see if the domains are blocked.
+
+For example, you can run the following command.
+
+``` bash
+curl googleadservices.com
+```
+
+If you get an error like this, it means that the domain is blocked.
+
+``` shell
+curl: (7) Failed to connect to googleadservices.com port 80 after 2 ms: Could not connect to server
+```
+
+But if you get a response with HTML, it means that the domain is not blocked (maybe a 404 error).
+
+
 ## 🤖 Auto update of domains to be blocked
 
 Open your `cron`.
