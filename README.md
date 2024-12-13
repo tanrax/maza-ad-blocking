@@ -371,7 +371,7 @@ ssh customer@andros.dev -p 5555
 
 ## 💬 Get Help or talk with the community
 
-- [IRC: Libera #maza-ad-blocking](ircs://irc.libera.chat:6697/maza-ad-blocking)
+- [IRC: #maza-ad-blocking on irc.libera.chat](ircs://irc.libera.chat:6697/maza-ad-blocking)
 - [Fediverse/Mastodon](https://activity.andros.dev/@andros)
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
