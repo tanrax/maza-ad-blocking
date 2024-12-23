@@ -36,6 +36,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - [Alternative DNS list](#-alternative-dns-list)
 - [DNSMASQ (or support sub-domains: wildcards)](#dnsmasq)
   - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
+- [Projects inspired by Maza](#-projects-inspired-by-maza)
 - [Donations](#-buy-me-a-coffee)
 - [Community or questions](#-get-help-or-talk-with-the-community)
 
@@ -378,6 +379,9 @@ ssh customer@andros.dev -p 5555
 
 You can easily create your own DNS server on a Raspberry Pi, VPS or wherever you want, to connect your devices in just 10 commands thanks to Maza. Follow the [tutorial](https://programadorwebvalencia.com/create-your-own-pi-hole-with-10-commands/).
 
+## 🎖️ Projects inspired by Maza
+
+- [adless](https://github.com/WIttyJudge/adless)
 
 ## ⚠️ CAUTION
 
