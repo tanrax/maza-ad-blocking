@@ -36,7 +36,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - [Alternative DNS list](#-alternative-dns-list)
 - [DNSMASQ (or support sub-domains: wildcards)](#dnsmasq)
   - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
-- [Projects inspired by Maza](#-projects-inspired-by-maza)
+- [Projects inspired by Maza](#user-content-️-projects-inspired-by-maza)
 - [Donations](#-buy-me-a-coffee)
 - [Community or questions](#-get-help-or-talk-with-the-community)
 
