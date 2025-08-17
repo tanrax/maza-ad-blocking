@@ -1,0 +1,2 @@
+github: [tanrax]
+ko_fi: androsfenollosa
