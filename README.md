@@ -362,14 +362,6 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 address=/.localhost/127.0.0.1
 ```
 
-## ☕ Buy me a coffee
-
-Help me continue to improve.
-
-```shell
-ssh customer@andros.dev -p 5555
-```
-
 ## 💬 Get Help or talk with the community
 
 - [IRC: #maza-ad-blocking on irc.libera.chat](ircs://irc.libera.chat:6697/maza-ad-blocking)
