@@ -110,7 +110,7 @@ But if you get a response with HTML, it means that the domain is not blocked (ma
 Open your `cron`.
 
 ``` bash
-crontab -e
+sudo crontab -e
 ```
 
 Add the following line at the end.
@@ -119,9 +119,10 @@ Add the following line at the end.
 @daily maza update
 ```
 
-Some users have reported problems creating daemons on MacOS. Fixed with `TERM=dumb`.
+Some users have reported problems on MacOS while creating daemons, these can be fixed by editing crontab as below: 
 
 ```
+PATH=/bin:/usr/bin:/usr/local/bin:/opt/homebrew/bin
 TERM=dumb
 @daily maza update
 ```
