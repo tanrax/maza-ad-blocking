@@ -11,9 +11,15 @@ THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
 [[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.config/maza/ || CONFIG=$XDG_CONFIG_HOME/maza/
 HOST_FILE=/etc/hosts
-COLOR_RED=$(tput setaf 1)
-COLOR_GREEN=$(tput setaf 2)
-COLOR_RESET=$(tput sgr0)
+if [ -t 1 ]; then
+    COLOR_RED=$(tput setaf 1 2>/dev/null || true)
+    COLOR_GREEN=$(tput setaf 2 2>/dev/null || true)
+    COLOR_RESET=$(tput sgr0 2>/dev/null || true)
+else
+    COLOR_RED=""
+    COLOR_GREEN=""
+    COLOR_RESET=""
+fi
 LIST="list"
 LIST_DNSMASQ="dnsmasq.conf"
 CUSTOM_DOMAINS="custom-domains"
