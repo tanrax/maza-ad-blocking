@@ -119,13 +119,19 @@ Add the following line at the end.
 @daily maza update
 ```
 
-Some users have reported problems on MacOS while creating daemons, these can be fixed by editing crontab as below: 
+**Note for macOS users:** Cron runs with a minimal environment. You need to set the PATH to include all required binaries and `TERM=dumb` to prevent color output errors:
 
 ```
 PATH=/bin:/usr/bin:/usr/local/bin:/opt/homebrew/bin
 TERM=dumb
 @daily maza update
 ```
+
+The PATH includes:
+- `/bin` - bash
+- `/usr/bin` - env
+- `/usr/local/bin` - maza
+- `/opt/homebrew/bin` - gsed (Apple Silicon) or adjust for Intel Macs if needed
 
 ## 🔪 Uninstall
 
