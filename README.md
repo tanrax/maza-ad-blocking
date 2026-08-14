@@ -386,6 +386,10 @@ You can easily create your own DNS server on a Raspberry Pi, VPS or wherever you
 
 Remember to make a backup copy of `/etc/hosts` in case of unforeseen circumstances, neither the project nor its author will be responsible for any possible repercussions derived from not carrying out this action.
 
+## 🤝 Contributing
+
+Contributions are welcome! Please see the [contribution guidelines](https://git.andros.dev/andros/contribute) for instructions on how to submit issues or pull requests.
+
 ## 🧑‍🎨 Credits
 
 <a target="_blank" href="https://andros.dev/">Andros Fenollosa</a>
