@@ -5,12 +5,12 @@ set -e
 
 # VARIABLES
 URL_DNS_LIST="https://pgl.yoyo.org/adservers/serverlist.php?showintro=0&mimetype=plaintext"
-URL_DNS_LIST_CUSTOM=""
+URL_DNS_LIST_CUSTOM="${URL_DNS_LIST_CUSTOM:-}"
 NAME_OSX="Darwin"
 THIS_OS=$(uname -mrs)
 PROGNAME=$(basename "$0")
 [[ -z "${XDG_CONFIG_HOME}" ]] && CONFIG=$HOME/.config/maza/ || CONFIG=$XDG_CONFIG_HOME/maza/
-HOST_FILE=/etc/hosts
+HOST_FILE="${MAZA_HOST_FILE:-/etc/hosts}"
 if [ -t 1 ]; then
     COLOR_RED=$(tput setaf 1 2>/dev/null || true)
     COLOR_GREEN=$(tput setaf 2 2>/dev/null || true)
@@ -95,7 +95,6 @@ update() {
 
     local local_url_dns_list="$URL_DNS_LIST" # Default
     if [ -n "$URL_DNS_LIST_CUSTOM" ]; then
-	echo "si"
 	local_url_dns_list="$URL_DNS_LIST_CUSTOM" # Custom
     fi
 

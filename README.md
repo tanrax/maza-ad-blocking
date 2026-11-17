@@ -36,6 +36,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - [Alternative DNS list](#-alternative-dns-list)
 - [DNSMASQ (or support sub-domains: wildcards)](#dnsmasq)
   - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
+- [Docker](#-docker)
 - [Projects inspired by Maza](#user-content-️-projects-inspired-by-maza)
 - [Donations](#-buy-me-a-coffee)
 - [Community or questions](#-get-help-or-talk-with-the-community)
@@ -373,6 +374,20 @@ address=/.localhost/127.0.0.1
 
 - [IRC: #maza-ad-blocking on irc.libera.chat](ircs://irc.libera.chat:6697/maza-ad-blocking)
 - [Fediverse/Mastodon](https://activity.andros.dev/@andros)
+
+## 🐳 Docker
+
+All-in-one image with Maza and Dnsmasq, ready to be the DNS server of your network. The list is updated once a day.
+
+The repository includes a [compose.yaml](compose.yaml) in its root folder, with the ports (`53/tcp`, `53/udp` and `67/udp`), a volume for the configuration and the `URL_DNS_LIST_CUSTOM` environment variable to use an alternative DNS list. Start it with:
+
+```sh
+git clone https://github.com/tanrax/maza-ad-blocking.git
+cd maza-ad-blocking
+docker compose up -d --build
+```
+
+More information in [docker/README.md](docker/README.md).
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 

@@ -1,0 +1,20 @@
+services:
+  maza:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: maza
+    environment:
+      # Alternative DNS list, empty uses the default list
+      - URL_DNS_LIST_CUSTOM=
+      #- URL_DNS_LIST_CUSTOM=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "67:67/udp"
+    volumes:
+      - maza_data:/etc/maza
+    restart: unless-stopped
+
+volumes:
+  maza_data:
