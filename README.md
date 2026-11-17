@@ -38,7 +38,7 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
   - [Create your own Pi-Hole](#-create-your-own-pi-hole-server-with-maza)
 - [Docker](#-docker)
 - [Projects inspired by Maza](#user-content-️-projects-inspired-by-maza)
-- [Donations](#-buy-me-a-coffee)
+- [Donations](https://ko-fi.com/androsfenollosa)
 
 ## 📟 Commands
 
