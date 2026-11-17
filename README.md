@@ -39,7 +39,6 @@ Simple, native and efficient **local ad blocker**. Bash script compatible with *
 - [Docker](#-docker)
 - [Projects inspired by Maza](#user-content-️-projects-inspired-by-maza)
 - [Donations](#-buy-me-a-coffee)
-- [Community or questions](#-get-help-or-talk-with-the-community)
 
 ## 📟 Commands
 
@@ -370,16 +369,11 @@ If you want all your `.localhost` domains, for example, point to localhost add i
 address=/.localhost/127.0.0.1
 ```
 
-## 💬 Get Help or talk with the community
-
-- [IRC: #maza-ad-blocking on irc.libera.chat](ircs://irc.libera.chat:6697/maza-ad-blocking)
-- [Fediverse/Mastodon](https://activity.andros.dev/@andros)
-
 ## 🐳 Docker
 
 All-in-one image with Maza and Dnsmasq, ready to be the DNS server of your network. The list is updated once a day.
 
-The repository includes a [compose.yaml](compose.yaml) in its root folder, with the ports (`53/tcp`, `53/udp` and `67/udp`), a volume for the configuration and the `URL_DNS_LIST_CUSTOM` environment variable to use an alternative DNS list. Start it with:
+The repository includes a [compose.yaml](compose.yaml) in its root folder, with the ports (`53/tcp`, `53/udp` and `67/udp`), a `config` folder for your custom domains, ignore list and extra Dnsmasq configuration, and the environment variables `URL_DNS_LIST_CUSTOM` (alternative DNS list) and `DNS_SERVERS` (upstream DNS servers). Start it with:
 
 ```sh
 git clone https://github.com/tanrax/maza-ad-blocking.git
@@ -387,7 +381,7 @@ cd maza-ad-blocking
 docker compose up -d --build
 ```
 
-More information in [docker/README.md](docker/README.md).
+How to use every option of this README with Docker in [docker/README.md](docker/README.md).
 
 ## 🍓 CREATE YOUR OWN PI-HOLE SERVER WITH MAZA
 

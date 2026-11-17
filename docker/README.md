@@ -26,21 +26,78 @@ The answer must be `127.0.0.1`.
 
 Then configure your devices or your router to use the IP of the machine running the container as DNS server.
 
-## Alternative DNS list
+## Configuration
 
-Set the `URL_DNS_LIST_CUSTOM` environment variable in `compose.yaml`.
+The configuration is stored in the `config` folder, next to `compose.yaml` (`/etc/maza` in the container). It is created the first time the container starts. On Linux the files belong to root, so edit them with `sudo`.
+
+```
+config/
+├── custom-domains   # Domains to block
+├── ignore           # Domains not to block
+└── dnsmasq.d/       # Extra Dnsmasq configuration (*.conf)
+```
+
+Equivalence with the options of the main README:
+
+| Main README | Docker |
+|---|---|
+| Alternative DNS list (line 8 of `maza`) | `URL_DNS_LIST_CUSTOM` environment variable |
+| `/root/.config/maza/custom-domains` | `config/custom-domains` |
+| `/root/.config/maza/ignore` | `config/ignore` |
+| Auto update with `cron` | Included, every day at 03:00 |
+| Bonus: dnsmasq is in charge of solving all DNS | `DNS_SERVERS` environment variable |
+| Bonus: dnsmasq have `localhost` domains | A `.conf` file in `config/dnsmasq.d/` |
+
+Dnsmasq only loads the list when it starts. After any change in `config`, update the list and restart Dnsmasq (the container starts it again in a second):
+
+```sh
+docker exec maza sh -c 'maza update && pkill dnsmasq'
+```
+
+After changing `compose.yaml`, recreate the container:
+
+```sh
+docker compose up -d
+```
+
+### Alternative DNS list
 
 ```yaml
 environment:
   - URL_DNS_LIST_CUSTOM=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 ```
 
-## Custom domains and ignore list
+### Upstream DNS servers
 
-The configuration is stored in the `maza_data` volume (`/etc/maza` in the container). Edit the files `custom-domains` and `ignore`, then update the list:
+By default Dnsmasq forwards the queries to the DNS of the host. To use other servers, separate them with commas:
+
+```yaml
+environment:
+  - DNS_SERVERS=208.67.222.222,208.67.220.220
+```
+
+### Extra Dnsmasq configuration
+
+Any `.conf` file in `config/dnsmasq.d/` is loaded by Dnsmasq. For example, to resolve all `.localhost` domains, create `config/dnsmasq.d/localhost.conf`:
+
+```
+address=/.localhost/127.0.0.1
+```
+
+## Commands
 
 ```sh
+# Status
+docker exec maza maza status
+
+# Update the list
 docker exec maza sh -c 'maza update && pkill dnsmasq'
+
+# Stop blocking
+docker exec maza sh -c 'maza stop && pkill dnsmasq'
+
+# Start blocking again
+docker compose restart
 ```
 
 ## Port 53 already in use

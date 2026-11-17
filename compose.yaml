@@ -8,13 +8,14 @@ services:
       # Alternative DNS list, empty uses the default list
       - URL_DNS_LIST_CUSTOM=
       #- URL_DNS_LIST_CUSTOM=https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      # Upstream DNS servers separated by commas, empty uses the DNS of the host
+      - DNS_SERVERS=
+      #- DNS_SERVERS=208.67.222.222,208.67.220.220
     ports:
       - "53:53/udp"
       - "53:53/tcp"
       - "67:67/udp"
     volumes:
-      - maza_data:/etc/maza
+      # custom-domains, ignore and extra dnsmasq configuration (dnsmasq.d/*.conf)
+      - ./config:/etc/maza
     restart: unless-stopped
-
-volumes:
-  maza_data:
